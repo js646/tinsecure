@@ -1,7 +1,8 @@
 # Tinsecure 🔥 - Capture The Flag Web Application  
 
-**Tinsecure** is a deliberately vulnerable web application designed for practicing web penetration testing techniques.
+**Tinsecure** is a deliberately vulnerable web application designed for practicing web penetration testing techniques. 
 It includes a [Tinder](https://tinder.com)-like web frontend and an Express.js server, focusing on common web exploits.  
+The objective is to gain access to the admin account by exploiting certain vulnerabilities in the system.
 
 ## 🚨 Vulnerabilities included:
 
