@@ -1,12 +1,12 @@
-# Tinsecure - Capture The Flag Web Application  
+# Tinsecure 🔥 - Capture The Flag Web Application  
 
 **Tinsecure** is a deliberately vulnerable web application designed for practicing web penetration testing techniques.
-It includes a tinder-like web frontend and an Express.js server, focusing on common web exploits.  
+It includes a [Tinder](https://tinder.com)-like web frontend and an Express.js server, focusing on common web exploits.  
 
-## ⚠️ Vulnerabilities included:
+## 🚨 Vulnerabilities included:
 
 <details>
-  <summary>Spoiler-Protection: Click to reveal vulnerabilities</summary>
+  <summary> ⚠️ Spoiler-Protection: Click to reveal vulnerabilities</summary>
 
 - **XSS in Chat Function**: JavaScript inputs are not sanitized, allowing cross-site scripting (XSS) attacks.  
 - **Access to All User Profile Pictures**: By incrementing the number in the image URL, all profile pictures can be accessed.  
@@ -28,7 +28,7 @@ npm install
 npm start  
 ```
 
-## Disclaimer
+## 📜 Disclaimer
 This project is intended for educational and security research purposes only. Test responsibly and only in authorized environments.
 
 Happy Hacking! 🔥
