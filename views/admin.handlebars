@@ -1,0 +1,58 @@
+<h1>Admin-Panel</h1>
+<a href="/admin">
+<button class="btn btn-outline-danger" type="submit" id="submit-report">User List</button>
+</a>
+<a href="/admin/reports">
+<button class="btn btn-outline-danger" type="submit" id="submit-report">User Reports</button>
+</a>
+<div class="container">
+    <div class="row col">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">uid</th>
+                <th scope="col">firstname</th>
+                <th scope="col">lastname</th>
+                <th scope="col">birthday</th>
+                <th scope="col">email</th>
+                <th scope="col">sex</th>
+                <th scope="col">city</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each user_list}}
+            <tr id="displayField{{{this.userid}}}">
+                <th scope="row">{{{this.userid}}}</th>
+                <td>{{{this.firstname}}}</td>
+                <td>{{{this.lastname}}}</td>
+                <td>{{{this.birthday}}}</td>
+                <td>{{{this.email}}}</td>
+                <td>{{{this.sex}}}</td>
+                <td>{{{this.city}}}</td>
+                <td><button type="button" class="btn btn-info" onclick="edit({{{this.userid}}})">Edit</button></td>
+            </tr>
+            <form action="/admin/changeUserData/{{{this.userid}}}" method="post">
+                <tr hidden=hidden id="editfield{{{this.userid}}}">
+                    <th scope="row">{{{this.userid}}}</th>
+                    <td><input type="text" class="form-control" id="firstname" name="firstname" value="{{{this.firstname}}}"></td>
+                    <td><input type="text" class="form-control" id="lastname" name="lastname" value="{{{this.lastname}}}"></td>
+                    <td><input type="date" class="form-control" id="birthdate" name="birthdate" value="{{{this.birthday}}}"></td>
+                    <td><input type="email" class="form-control" id="email" name="email" value="{{{this.email}}}" readonly></td>
+                    <td>{{{this.sex}}}</td>
+                    <td><input type="text" class="form-control" id="city" name="city" value="{{{this.city}}}"></td>
+                    <td><input type="submit" class="btn btn-success" value="Save"></td>
+                </tr>
+            </form>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function edit(userID) {
+        document.getElementById("displayField" + userID).setAttribute("hidden", "hidden");
+
+        document.getElementById("editfield" + userID).removeAttribute("hidden");
+    }
+</script>

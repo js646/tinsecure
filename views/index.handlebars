@@ -1,0 +1,35 @@
+{{#each user_list}}
+<div class="slide" style="display: none;">
+    <div class="row col d-flex justify-content-center mb-3">
+        <img alt="Your Profile Picture" class="img-thumbnail rounded mt-4" style="max-height: 30rem; width: auto;"
+            src="{{{this.picture}}}">
+    </div>
+    <div class="row col mb-5">
+        <h2>{{{this.firstname}}} {{{this.lastname}}}, {{{this.age}}}</h2>
+    </div>
+    <div class="row col mb-5">
+        <h4>{{{this.description}}}</h4>
+    </div>
+    <div class="row d-flex justify-content-center text-center">
+        <div class="col-4">
+            <form action="/match/{{{this.userid}}}" method="post">
+                <button type="submit" class="btn btn-success match" onclick="match({{{this.userid}}});">MATCH!</button>
+            </form>
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn btn-danger nope" onclick="nextSlide();">NOPE!</button>
+        </div>
+    </div>
+</div>
+{{else}}
+<br>
+<br>
+<p class="empty">No more candidates available</p>
+{{/each}}
+
+{{#if isAdmin}}
+    <hr style="margin-top: 10%;">
+    <a href="/admin"><button type="button" class="btn btn-info btn-danger">Admin-Panel</button></a>
+{{/if}}
+
+<script src="/controllers/indexController.js"></script>

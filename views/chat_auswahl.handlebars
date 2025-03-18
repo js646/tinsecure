@@ -1,0 +1,11 @@
+<div class="text-center">
+{{#each matches}}
+<br>
+<a href="/chat/{{{minimum ../req_userid this.userid}}}-{{{maximum ../req_userid this.userid}}}" class="btn btn-outline-danger">
+    <h3>{{{this.firstname}}} {{{this.lastname}}}</h3>
+</a>
+{{else}}
+<br>
+<p class="empty">No matches yet</p>
+{{/each}}
+</div>

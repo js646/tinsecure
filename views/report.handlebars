@@ -1,0 +1,8 @@
+<div class="row col mb-3">
+    <h3>Report User {{{user.firstname}}} {{{user.lastname}}}</h3>
+    <form action="/report/{{{user.userid}}}" method="post">
+    <label class="form-label" for="message">Message</label>
+    <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+    <button class="btn btn-danger" type="submit" id="submit">Submit</button>
+    </form>
+</div>

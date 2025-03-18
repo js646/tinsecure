@@ -1,0 +1,73 @@
+<form action="/register" method="post" style="margin: 8% 5%">
+    <h3 style="margin-bottom: 3%;"> Create an account </h3>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="firstName">Firstname</label>
+            <input class="form-control" name="firstName" type="text" required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="lastName">Lastname</label>
+            <input class="form-control" name="lastName" type="text" required>
+        </div>
+    </div>
+    <div class="row col mb-3">
+        <label class="form-label" for="email">E-Mail</label>
+        <input class="form-control" name="email" type="email" required>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="password0">Password</label>
+            <input class="form-control" id="password0" name="password0" type="password" onchange='check_pass();' required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="password1">Repeat Password</label>
+            <input class="form-control" id="password1" name="password1" type="password" onchange='check_pass();' required>
+        </div>
+        <div class="col-6" id="message">
+                
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="password0">Security Question: What or who is the most important thing or person in your Life?</label>
+            <input class="form-control" name="secAnswer" type="text" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="birthdate">Birthdate</label>
+            <input class="form-control" name="birthdate" type="date" required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="city">City</label>
+            <input class="form-control" name="city" type="text" required>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center mb-3">
+        <label class="form-label" for="gender">Gender</label>
+        <div class="col-2 form-check">
+            <input class="form-check-input" name="gender" type="radio" value="male" required>
+            <label class="form-check-label" for="maleRadioButton">
+                Male
+            </label>
+        </div>
+        <div class="col-2 form-check">
+            <input class="form-check-input" name="gender" type="radio" value="female" required>
+            <label class="form-check-label" for="femaleRadioButton">
+                Female
+            </label>
+        </div>
+    </div>
+        <div class="row col mb-3">
+        <label class="form-label" for="profilePicture">Profile-Picture-URL</label>
+        <input class="form-control" name="profilePicture" type="url" pattern="https://.*" size="30" placeholder="https://example.com" required>
+    </div>
+    <div class="row col mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea class="form-control" name="description" rows="3" required></textarea>
+    </div>
+
+    <div class="row col-6 text-center mb-3">
+        <button class="btn btn-danger" id="submit" name="submit" type="submit" disabled>Submit</button>
+    </div>
+</form>

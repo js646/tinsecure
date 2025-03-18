@@ -1,0 +1,77 @@
+<div class="row col d-flex justify-content-center">
+    <a href="picture/{{{uid}}}">
+        <img alt="Your Profile Picture" class="img-thumbnail rounded mt-4" style="max-height: 20rem; width: auto;" href="picture/{{{uid}}}"
+            src="{{{picture}}}">
+    </a>
+</div>
+
+<form action="/profil" method="post">
+    <div class="row col mb-3">
+        <label class="form-label" for="profilePicture">Profile-Picture-URL</label>
+        <input class="form-control" name="profilePicture" type="url" pattern="https://.*" size="30" placeholder="https://example.com" value="{{picture}}" required>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="firstName">Firstname</label>
+            <input class="form-control" name="firstName" type="text" value="{{{firstname}}}" required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="lastName">Lastname</label>
+            <input class="form-control" name="lastName" type="text" value="{{{lastname}}}" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="birthdate">Birthdate</label>
+            <input class="form-control" name="birthdate" type="date" value="{{{birthday}}}" required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="city">City</label>
+            <input class="form-control" name="city" type="text" value="{{{city}}}" required>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center mb-3">
+        <label class="form-label" for="gender">Gender</label>
+        <div class="col-2 form-check">
+            <input class="form-check-input" name="gender" type="radio" value="male" {{#if isMale}} checked="true" {{/if}}>
+            <label class="form-check-label" for="maleRadioButton">
+                Male
+            </label>
+        </div>
+        <div class="col-2 form-check">
+            <input class="form-check-input" name="gender" type="radio" value="female" {{#if isMale}} {{else}} checked="true" {{/if}}>
+            <label class="form-check-label" for="femaleRadioButton">
+                Female
+            </label>
+        </div>
+    </div>
+    <div class="row col mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea class="form-control" name="description" rows="3">{{{description}}}</textarea>
+    </div>
+    <div class="row col mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" name="email" type="text" readonly="readonly" value="{{{email}}}">
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label class="form-label" for="password0">Password</label>
+            <input class="form-control" id="password0" name="password0" type="password" onchange='check_pass();' required>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="password1">Repeat Password</label>
+            <input class="form-control" id="password1" name="password1" type="password" onchange='check_pass();' required>
+        </div>
+        <div class="col-6" id="message">
+                
+        </div>
+    </div>
+    {{#if errMsg}}
+    <div class="row col-6 mb-3" id="errMsg">
+    <p style="color: red">Wrong password provided, please try again</p>
+    </div>
+    {{/if}}
+    <div class="row col-6 text-center mb-3">
+        <button class="btn btn-danger" type="submit" id="submit">Submit</button>
+    </div>
+</form>
